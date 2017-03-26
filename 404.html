@@ -1,15 +1,25 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>singleNeuron-404</title>
+    <meta charset="UTF-8">
+    <title>singleNeuron-404</title>
 </head>
-
 <body>
+    <p>404 ERROR!</p>
+    <p>将在 <span id="mes">5</span> 秒钟后返回到首页...</p>
+    <script>
+    var i = 5;
+    var timer;
+    timer = setInterval("fun()", 1000);
 
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8" homePageUrl="https://singleNeuron.github.io" homePageName="返回中央车站"></script>
-
-
+    function fun() {
+        if (i == 0) {
+            window.location.href = "https://singleNeuron.github.io";
+            clearInterval(timer);
+        }
+        document.getElementById("mes").innerHTML = i;
+        i--;
+    }
+    </script>
 </body>
-
 </html>
