@@ -5,14 +5,39 @@
 
 <script type="text/javascript">
 <!--
+var videoscourse = 0;
 function opensgls() {
-		window.open ("https://player.youku.com/embed/XODgyMzA1NzAw","诗歌朗诵","channelmode=yes, location=no, menubar=no, resizable=yes, scrollbars=no, titlebar=no, toolbar=no")
+	if (videoscourse==0) window.open ("https://player.youku.com/embed/XODgyMzA1NzAw","诗歌朗诵","channelmode=yes, location=no, menubar=no, resizable=yes, scrollbars=no, titlebar=no, toolbar=no");
+	else window.open ("https://www.youtube.com/embed/zr7ZlOB4_6I?rel=0","诗歌朗诵","channelmode=yes, location=no, menubar=no, resizable=yes, scrollbars=no, titlebar=no, toolbar=no");
 }
 function opencygs() {
-		window.open ("https://player.youku.com/embed/XMTYzMzc5ODI0NA==","成语故事","channelmode=yes, location=no, menubar=no, resizable=yes, scrollbars=no, titlebar=no, toolbar=no")
+		window.open ("https://player.youku.com/embed/XMTYzMzc5ODI0NA==","成语故事","channelmode=yes, location=no, menubar=no, resizable=yes, scrollbars=no, titlebar=no, toolbar=no");
 }
 function openwdy() {
-		window.open ("https://www.bilibili.com/video/av3344094/","微电影","channelmode=yes, location=no, menubar=no, resizable=yes, scrollbars=no, titlebar=no, toolbar=no")
+	if (videoscourse==0) window.open ("https://www.bilibili.com/video/av3344094/","微电影","channelmode=yes, location=no, menubar=no, resizable=yes, scrollbars=yes, titlebar=no, toolbar=no");
+	else window.open ("https://www.youtube.com/embed/LAEWEUorPcM?rel=0","诗歌朗诵","channelmode=yes, location=no, menubar=no, resizable=yes, scrollbars=no, titlebar=no, toolbar=no");
+}
+function changevideo() {
+	if (videoscourse==0) {
+		document.getElementById("source").innerHTML = "Youku/bilibili";
+		document.getElementById("sgls").style.display = "none";
+		document.getElementById("sgls1").style.display = "inline";
+		document.getElementById("wdy").style.display = "none";
+		document.getElementById("wdy1").style.display = "inline";
+		videoscourse = 1;
+	}
+	else {
+		document.getElementById("source").innerHTML = "YouTube";
+		document.getElementById("sgls").style.display = "inline";
+		document.getElementById("sgls1").style.display = "none";
+		document.getElementById("wdy").style.display = "inline";
+		document.getElementById("wdy1").style.display = "none";
+		videoscourse = 0;
+	}
+}
+function init() {
+	document.getElementById("sgls1").style.display = "none";
+	document.getElementById("wdy1").style.display = "none";
 }
 //-->
 </script>
@@ -75,12 +100,20 @@ a:hover {
 				font-family: 华文新魏;
 				font-size: xx-large;
 }
+.style17 {
+				font-size: large;
+				font-family: 仿宋;
+				text-align: right;
+}
 </style>
 </head>
 
-<body style="background-image: url('images/201511120943393101.jpg'); background-attachment: fixed; background-size: cover; color: #FFFFFF;">
+<body style="background-image: url('images/201511120943393101.jpg'); background-attachment: fixed; background-size: cover; color: #FFFFFF;" onload="init()">
 
 <p class="style9">Our great Yuying</p>
+<p class="style17"> 更改视频源：
+<a  id="source" href="javascript:void(0);" onclick="changevideo()">YouTube/bilibili</a>
+</p>
 
 <table style="width: 100%">
 	<tr>
@@ -123,7 +156,9 @@ a:hover {
 	</tr>
 	<tr>
 		<td class="style10" style="width: 92px; height: 501px;">&nbsp;</td>
-		<td class="style10" style="width: 581px; height: 501px;">&nbsp;<iframe height=498 width=510 src='https://player.youku.com/embed/XODgyMzA1NzAw' frameborder=0 'allowfullscreen'></iframe>
+		<td class="style10" style="width: 581px; height: 501px;">&nbsp;
+			<iframe id="sgls" height=498 width=510 src='https://player.youku.com/embed/XODgyMzA1NzAw' frameborder=0 'allowfullscreen'></iframe>
+			<iframe id="sgls1" width="560" height="315" src="https://www.youtube.com/embed/zr7ZlOB4_6I?rel=0" frameborder="0" allowfullscreen></iframe>
 		</td>
 		<td style="height: 501px; width: 205px">
 		
@@ -160,7 +195,9 @@ a:hover {
 	</tr>
 	<tr>
 		<td class="style10" style="width: 92px">&nbsp;</td>
-		<td class="style10" style="width: 581px">&nbsp;<embed height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=3344094&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></embed>
+		<td class="style10" style="width: 581px">&nbsp;
+			<embed id="wdy" height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=3344094&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></embed>
+			<iframe id="wdy1" width="560" height="315" src="https://www.youtube.com/embed/LAEWEUorPcM?rel=0" frameborder="0" allowfullscreen></iframe>
 		</td>
 		<td style="width: 205px">
 		&nbsp;</td>
