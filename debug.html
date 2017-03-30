@@ -1,0 +1,125 @@
+<body>
+<p id=data> </p>
+<div id="example"></div>
+</body>
+
+<script type="text/javascript">
+<!--
+
+var txt="";
+var Sys = {}; 
+var ua = navigator.userAgent.toLowerCase(); 
+var s; 
+(s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] : 
+(s = ua.match(/trident\/([\d.]+)/)) ? Sys.ie = s[1] : 
+(s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] : 
+(s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] : 
+(s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] : 
+(s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0; 
+
+txt= "<p>Browser: " + s + "</p>"+txt;
+
+var u = navigator.userAgent, tmp;
+function detectbrowser() {
+               return {         //移动终端浏览器版本信息
+
+                   trident: u.indexOf('Trident') >-1, //IE内核
+
+                   presto: u.indexOf('Presto') >-1, //opera内核
+
+                   webKit: u.indexOf('AppleWebKit')> -1, //苹果、谷歌内核
+
+                   gecko: u.indexOf('Gecko') > -1&& u.indexOf('KHTML') == -1, //火狐内核
+
+                   mobile:!!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+
+                   ios: !!u.match(/\(i[^;]+;( U;)?CPU.+Mac OS X/), //ios终端
+
+                   android: u.indexOf('Android') >-1 || u.indexOf('Linux') > -1, //android终端或uc浏览器
+
+                   iPhone: u.indexOf('iPhone') >-1, //是否为iPhone或者QQHD浏览器
+
+                   iPad: u.indexOf('iPad') > -1, //是否iPad
+
+                   webApp: u.indexOf('Safari') == -1//是否web应该程序，没有头部与底部
+
+               };
+}
+
+if (detectbrowser().trident) tmp="IE";
+else if (detectbrowser().presto) tmp="Opera";
+else if (detectbrowser().webKit) tmp="AppleWebkit (Apple/Chrome)";
+else if (detectbrowser().gecko) tmp="Firefox";
+else if (detectbrowser().android) tmp="Android";
+else if (detectbrowser().iPhone) tmp="iPhone";
+else if (detectbrowser().iPad) tmp="iPad";
+else if (detectbrowser().webApp) tmp="Safari";
+else if (detectbrowser().mobile) tmp="Mobile";
+else if (detectbrowser().ios) tmp="iOS";
+else tmp="unknow";
+
+txt= "<p>Browser: " + tmp + "</p>"+txt;
+
+function getOS() {
+//获取用户代理
+var ua = navigator.userAgent;
+if (ua.indexOf("Windows NT 5.0") != -1) return "Windows 2000";
+if (ua.indexOf("Windows NT 5.1") != -1) return "Windows XP";
+if (ua.indexOf("Windows NT 5.2") != -1) return "Windows XP / Server 2003";
+if (ua.indexOf("Windows NT 6.0") != -1) return "Windows Vista / Server 2008";
+if (ua.indexOf("Windows NT 6.1") != -1) return "Windows 7 / Server 2008";
+if (ua.indexOf("Windows NT 6.2") != -1) return "Windows 8 / Server 2012";
+if (ua.indexOf("Windows NT 6.3") != -1) return "Windows 8.1 / Server 2012";
+if (ua.indexOf("Windows NT 6.4") != -1) return "Windows 10";
+if (ua.indexOf("Windows NT 10") != -1) return "Windows 10";
+if (ua.indexOf("iPhone") != -1) return "iPhone";
+if (ua.indexOf("iPad") != -1) return "iPad";
+if (ua.indexOf("Linux") != -1) {
+var index = ua.indexOf("Android");
+if (index != -1) {
+//os以及版本
+var os = ua.slice(index, index+13);
+
+//手机型号
+var index1 = ua.lastIndexOf(";");
+var index2 = ua.indexOf("Build");
+var type = ua.slice(index1+1, index2);
+return type + os;
+} else {
+return "Linux";
+}
+}
+
+return "Unknow";
+}
+
+
+function getCPU()
+    {
+       var agent=navigator.userAgent.toLowerCase();
+       if(agent.indexOf("win64")>=0||agent.indexOf("wow64")>=0) return "x64";
+       return navigator.cpuClass;
+    }
+
+txt= "<p>System: " +  getOS() + "  " + getCPU() + "</p>"+txt;
+
+txt+= "<p>BrowserCodeName: " + navigator.appCodeName + "</p>";
+txt+= "<p>Browser: " + navigator.product + "</p>";
+txt+= "<p>BrowserName: " + navigator.appName + "</p>";
+txt+= "<p>BrowserMinorVersion: " + navigator.appMinorVersion + "</p>";
+txt+= "<p>Version: " + navigator.userAgent + "</p>";
+txt+= "<p>CPU Class: " + navigator.cpuClass + "</p>";
+txt+= "<p>Online: " + navigator.onLine + "</p>";
+txt+= "<p>Platform: " + navigator.platform + "</p>";
+txt+= "<p>Language: " + navigator.language + "</p>";
+  
+document.getElementById("example").innerHTML=txt;
+
+function data() {
+    document.getElementById("data").innerHTML = Date();
+}
+
+var timer = self.setInterval("data()", 1000);
+
+//-->
+</script>
