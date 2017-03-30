@@ -5,53 +5,11 @@
 txt = "<p>BrowserCodeName: " + navigator.appCodeName + "</p>";
 txt+= "<p>BrowserName: " + navigator.appName + "</p>";
 txt+= "<p>BrowserMinorVersion: " + navigator.appMinorVersion + "</p>";
-txt+= "<p>BrowserVersion: " + navigator.appVersion + "</p>";
+txt+= "<p>Version: " + navigator.appVersion + "</p>";
 txt+= "<p>CPU Class: " + navigator.cpuClass + "</p>";
 txt+= "<p>Online: " + navigator.onLine + "</p>";
 txt+= "<p>Platform: " + navigator.platform + "</p>";
 txt+= "<p>SystemLanguage: " + navigator.systemLanguage + "</p>";
 txt+= "<p>User-agent language: " + navigator.systemLanguage + "</p>";
-
-txt+= "<p>Browser: ";
-var Sys = {};
- var ua = navigator.userAgent.toLowerCase();
- var s;
-  (s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
-  (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
-  (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
-  (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
-  (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
- if (Sys.ie) txt+=('IE ' + Sys.ie); 
- if (Sys.firefox) txt+=('Firefox ' + Sys.firefox);
- if (Sys.chrome) txt+=('Chrome ' + Sys.chrome);
- if (Sys.opera) txt+=('Opera ' + Sys.opera);
- if (Sys.safari) txt+=('Safari ' + Sys.safari);
- txt+="</p>";
- 
- var userAgentInfor = navigator.userAgent.toLowerCase(),
-    windowsVersion = userAgentInfor.substr(userAgentInfor.indexOf('windows nt ') + 11,4),
-    nameVersion;
-switch(windowsVersion){
-    case '5.1':
-        nameVersion = 'window xp';
-        break;
-    case '6.1':
-        nameVersion = 'window 7';
-        break;
-    case '6.3':
-        nameVersion = 'window 8';
-        break;
-    case '10.0':
-        nameVersion = 'window 10';
-        break;
-
-    default:
-        nameVersion = 'other';
-
-}
-
-txt+="<p>System: " + nameVersion + windowsVersion +"</p>";
-
-document.getElementById("example").innerHTML=txt;
 
 </script>
