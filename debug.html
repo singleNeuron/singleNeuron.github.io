@@ -118,8 +118,7 @@ var txt = "";
 
     function data() {
         document.getElementById("data").innerHTML = Date();
-        var d=new Date('<%=DateTime.Now.ToString("yyyy\\/MM\\/dd HH:mm:ss")%>');
-        document.getElementById("sdata").innerHTML = d;
+        $.ajax({type:"OPTIONS",url:"/",complete:function(x){document.getElementById("sdata") = x.getResponseHeader("Date")}})
     }
 
     var timer = self.setInterval("data()", 1000);
