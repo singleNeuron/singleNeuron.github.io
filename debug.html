@@ -1,9 +1,15 @@
 <body>
     <p> Local Time: <span id="data"></span></p>
     <p> Server Time: <span id="sdata"></span></p>
+    <p> IP: <span id="ip"></span></p>
+    <p> Address: <span id="add"></span></p>
     <div id="example"></div>
+    <p>API提供： <a href="http://pv.sohu.com/cityjson?ie=utf-8">搜狐</a>
+        <a href="http://whois.pconline.com.cn/ip.js">太平洋</a></p>
 </body>
 
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script src="http://whois.pconline.com.cn/ip.js"></script>
 <script type="text/javascript">
     <!--
 
@@ -122,15 +128,19 @@ var txt = "";
     }
 
     var timer = self.setInterval("data()", 1000);
+    document.getElementById("ip").innerHTML = returnCitySN["cip"];
+    // document.getElementById("add").innerHTML = returnCitySN["cname"];
+    labelIp('add');
 
 //-->
 
 </script>
 
-<script runat="server" type="text/javascript"> 
-function getsdata () {
-var a = new Date(); 
-a =a.getFullYear()+ "-"+(a.getMonth()+1)+"-"+a.getDate()+" "+a.getHours()+":"+a.getMinutes()+":"+a.getSeconds(); 
-document.getElementById("sdata").innerHTML = a;
-}
-</script> 
+<script runat="server" type="text/javascript">
+    function getsdata() {
+        var a = new Date();
+        a = a.getFullYear() + "-" + (a.getMonth() + 1) + "-" + a.getDate() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds();
+        document.getElementById("sdata").innerHTML = a;
+    }
+
+</script>
