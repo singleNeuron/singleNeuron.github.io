@@ -118,7 +118,7 @@ var txt = "";
 
     function data() {
         document.getElementById("data").innerHTML = Date();
-        $.ajax({type:"OPTIONS",url:"/",complete:function(x){document.getElementById("sdata") = x.getResponseHeader("Date")}})
+        getsdata();
     }
 
     var timer = self.setInterval("data()", 1000);
@@ -126,3 +126,11 @@ var txt = "";
 //-->
 
 </script>
+
+<script runat="server" type="text/javascript"> 
+function getsdata () {
+var a = new Date(); 
+a =a.getFullYear()+ "-"+(a.getMonth()+1)+"-"+a.getDate()+" "+a.getHours()+":"+a.getMinutes()+":"+a.getSeconds(); 
+document.getElementById("sdata").innerHTML = a;
+}
+</script> 
