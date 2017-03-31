@@ -2,7 +2,7 @@
     <p> Local Time: <span id="data"></span></p>
     <p> Server Time: <span id="sdata"></span></p>
     <p> IP: <span id="ip"></span></p>
-    <p> Address: <span id="add"></span></p>
+    <p> Address: <span id="add"></span> / <span id="add2"></span></p>
     <div id="example"></div>
     <p>API提供： <a href="http://pv.sohu.com/cityjson?ie=utf-8">搜狐</a>
         <a href="http://whois.pconline.com.cn/ip.js">太平洋</a></p>
@@ -129,8 +129,8 @@ var txt = "";
 
     var timer = self.setInterval("data()", 1000);
     document.getElementById("ip").innerHTML = returnCitySN["cip"];
-    // document.getElementById("add").innerHTML = returnCitySN["cname"];
-    labelIp('add');
+    document.getElementById("add").innerHTML = returnCitySN["cname"];
+    labelIp('add2');
 
 //-->
 
