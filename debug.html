@@ -9,7 +9,7 @@
 </body>
 
 <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
-<script src="http://whois.pconline.com.cn/ip.js"></script>
+<script src="https://whois.pconline.com.cn/ip.js"></script>
 <script type="text/javascript">
     <!--
 
@@ -47,6 +47,8 @@ var txt = "";
             iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
 
             iPad: u.indexOf('iPad') > -1, //是否iPad
+            
+            iPod: u.indexOf('iPod') > -1, //是否iPod
 
             webApp: u.indexOf('Safari') == -1//是否web应该程序，没有头部与底部
 
@@ -60,6 +62,7 @@ var txt = "";
     else if (detectbrowser().android) tmp = "Android";
     else if (detectbrowser().iPhone) tmp = "iPhone";
     else if (detectbrowser().iPad) tmp = "iPad";
+    else if (detectbrowser().iPad) tmp = "iPod";
     else if (detectbrowser().webApp) tmp = "Safari";
     else if (detectbrowser().mobile) tmp = "Mobile";
     else if (detectbrowser().ios) tmp = "iOS";
@@ -80,6 +83,7 @@ var txt = "";
         if (ua.indexOf("Windows NT 6.4") != -1) return "Windows 10";
         if (ua.indexOf("Windows NT 10") != -1) return "Windows 10";
         if (ua.indexOf("iPhone") != -1) return "iPhone";
+        if (ua.indexOf("iPod != -1) return "iPod";
         if (ua.indexOf("iPad") != -1) return "iPad";
         if (ua.indexOf("Linux") != -1) {
             var index = ua.indexOf("Android");
