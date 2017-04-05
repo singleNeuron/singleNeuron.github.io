@@ -31,6 +31,8 @@ var txt = "";
         return {         //移动终端浏览器版本信息
 
             trident: u.indexOf('Trident') > -1, //IE内核
+            
+            IE: u.indexOf('MSIE') > -1,
 
             presto: u.indexOf('Presto') > -1, //opera内核
 
@@ -43,19 +45,19 @@ var txt = "";
             ios: !!u.match(/\(i[^;]+;( U;)?CPU.+Mac OS X/), //ios终端
 
             android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器
+            
+            iPod: u.indexOf('iPod') > -1, //是否iPod
 
             iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
 
             iPad: u.indexOf('iPad') > -1, //是否iPad
-            
-            iPod: u.indexOf('iPod') > -1, //是否iPod
 
             webApp: u.indexOf('Safari') == -1//是否web应该程序，没有头部与底部
 
         };
     }
 
-    if (detectbrowser().trident) tmp = "IE";
+    if (detectbrowser().trident || detectbrowser().IE) tmp = "IE";
     else if (detectbrowser().presto) tmp = "Opera";
     else if (detectbrowser().webKit) tmp = "AppleWebkit (Apple/Chrome)";
     else if (detectbrowser().gecko) tmp = "Firefox";
