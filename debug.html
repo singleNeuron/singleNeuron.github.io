@@ -104,9 +104,8 @@ var txt = "";
             }
         }
         if (ua.indexOf("Mac") != -1) {
+                var index = ua.indexOf("Mac");
                 var os = ua.slice(index, index + 13);
-
-                //手机型号
                 var index1 = ua.lastIndexOf(";");
                 var index2 = ua.indexOf("Build");
                 var type = ua.slice(index1 + 1, index2);
