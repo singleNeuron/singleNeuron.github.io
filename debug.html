@@ -104,10 +104,13 @@ var txt = "";
             }
         }
         if (ua.indexOf("Mac") != -1) {
+                var os1 = ua.indexOf("(");
+                var os2 = ua.indexOf(";");
+                var os = ua.slice(os1 + 1, os2);
                 var index1 = ua.lastIndexOf(";");
                 var index2 = ua.indexOf(")");
                 var type = ua.slice(index1 + 1, index2);
-                return type;
+                return os + " " + type;
         }
 }
 
