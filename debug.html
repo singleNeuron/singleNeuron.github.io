@@ -107,7 +107,7 @@ var txt = "";
                 var os1 = ua.indexOf("(");
                 var os2 = ua.indexOf(";");
                 var os = ua.slice(os1 + 1, os2);
-                var index1 = ua.lastIndexOf("OS");
+                var index1 = ua.IndexOf("OS");
                 var index2 = ua.indexOf(")");
                 var type = ua.slice(index1, index2);
                 return os + " " + type;
