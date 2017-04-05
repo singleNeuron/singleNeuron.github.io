@@ -2,14 +2,14 @@
     <p> Local Time: <span id="data"></span></p>
     <p> Server Time: <span id="sdata"></span></p>
     <p> IP: <span id="ip"></span></p>
-    <p> Address: <span id="add"></span> / <span id="add2"></span></p>
+    <p> Address: <span id="add"></span> / <span id="add2"></span> / <iframe src="https://whois.pconline.com.cn/ip.jsp" height="12"></iframe></p>
     <div id="example"></div>
     <p>API提供： <a href="http://pv.sohu.com/cityjson?ie=utf-8">搜狐</a>
         <a href="http://whois.pconline.com.cn/ip.js">太平洋</a></p>
 </body>
 
 <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
-<script src="https://whois.pconline.com.cn/ip.js"></script>
+<script src="http://whois.pconline.com.cn/ip.js"></script>
 <script type="text/javascript">
     <!--
 
@@ -83,7 +83,7 @@ var txt = "";
         if (ua.indexOf("Windows NT 6.4") != -1) return "Windows 10";
         if (ua.indexOf("Windows NT 10") != -1) return "Windows 10";
         if (ua.indexOf("iPhone") != -1) return "iPhone";
-        if (ua.indexOf("iPod != -1) return "iPod";
+        if (ua.indexOf("iPod") != -1) return "iPod";
         if (ua.indexOf("iPad") != -1) return "iPad";
         if (ua.indexOf("Linux") != -1) {
             var index = ua.indexOf("Android");
