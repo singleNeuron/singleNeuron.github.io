@@ -151,7 +151,7 @@ var txt = "";
     function getsdata() {
         var a = new Date();
         var s = a.getSeconds();
-        if (s<10) a = "0"+s;
+        if (s<10) s = "0"+s;
         a = a.getFullYear() + "-" + (a.getMonth() + 1) + "-" + a.getDate() + " " + a.getHours() + ":" + a.getMinutes() + ":" + s;
         document.getElementById("sdata").innerHTML = a;
     }
