@@ -1,4 +1,5 @@
 <html>
+
 <body>
     <p> Local Time: <span id="data"></span></p>
     <p> Server Time: <span id="sdata"></span></p>
@@ -32,7 +33,7 @@ var txt = "";
         return {         //移动终端浏览器版本信息
 
             trident: u.indexOf('Trident') > -1, //IE内核
-            
+
             IE: u.indexOf('MSIE') > -1,
 
             presto: u.indexOf('Presto') > -1, //opera内核
@@ -46,7 +47,7 @@ var txt = "";
             ios: !!u.match(/\(i[^;]+;( U;)?CPU.+Mac OS X/), //ios终端
 
             android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器
-            
+
             iPod: u.indexOf('iPod') > -1, //是否iPod
 
             iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
@@ -85,9 +86,9 @@ var txt = "";
         if (ua.indexOf("Windows NT 6.3") != -1) return "Windows 8.1 / Server 2012";
         if (ua.indexOf("Windows NT 6.4") != -1) return "Windows 10";
         if (ua.indexOf("Windows NT 10") != -1) return "Windows 10";
-/*        if (ua.indexOf("iPod") != -1) return "iPod";
-        if (ua.indexOf("iPhone") != -1) return "iPhone";
-        if (ua.indexOf("iPad") != -1) return "iPad";*/
+        /*        if (ua.indexOf("iPod") != -1) return "iPod";
+                if (ua.indexOf("iPhone") != -1) return "iPhone";
+                if (ua.indexOf("iPad") != -1) return "iPad";*/
         if (ua.indexOf("Linux") != -1) {
             var index = ua.indexOf("Android");
             if (index != -1) {
@@ -104,15 +105,15 @@ var txt = "";
             }
         }
         if (ua.indexOf("Mac") != -1) {
-                var os1 = ua.indexOf("(");
-                var os2 = ua.indexOf(";");
-                var os = ua.slice(os1 + 1, os2);
-                var index1 = ua.indexOf("OS");
-                var index2 = ua.indexOf(")");
-                var type = ua.slice(index1, index2);
-                return os + " " + type;
+            var os1 = ua.indexOf("(");
+            var os2 = ua.indexOf(";");
+            var os = ua.slice(os1 + 1, os2);
+            var index1 = ua.indexOf("OS");
+            var index2 = ua.indexOf(")");
+            var type = ua.slice(index1, index2);
+            return os + " " + type;
         }
-}
+    }
 
 
     function getCPU() {
@@ -151,12 +152,13 @@ var txt = "";
     function getsdata() {
         var a = new Date();
         var s = a.getSeconds();
-        if (s<10) s = "0"+s;
+        if (s < 10) s = "0" + s;
         var m = a.getMinutes()
-        if (m<10) m = "0"+m;
+        if (m < 10) m = "0" + m;
         a = a.getFullYear() + "-" + (a.getMonth() + 1) + "-" + a.getDate() + " " + a.getHours() + ":" + m + ":" + s;
         document.getElementById("sdata").innerHTML = a;
     }
 
 </script>
+
 </html>
