@@ -150,7 +150,9 @@ var txt = "";
 <script runat="server" type="text/javascript">
     function getsdata() {
         var a = new Date();
-        a = a.getFullYear() + "-" + (a.getMonth() + 1) + "-" + a.getDate() + " " + a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds();
+        var s = a.getSeconds();
+        if (s<10) a = "0"+s;
+        a = a.getFullYear() + "-" + (a.getMonth() + 1) + "-" + a.getDate() + " " + a.getHours() + ":" + a.getMinutes() + ":" + s;
         document.getElementById("sdata").innerHTML = a;
     }
 
