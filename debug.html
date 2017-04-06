@@ -152,7 +152,9 @@ var txt = "";
         var a = new Date();
         var s = a.getSeconds();
         if (s<10) s = "0"+s;
-        a = a.getFullYear() + "-" + (a.getMonth() + 1) + "-" + a.getDate() + " " + a.getHours() + ":" + a.getMinutes() + ":" + s;
+        var m = a.getMinutes()
+        if (m<10) m = "0"+m;
+        a = a.getFullYear() + "-" + (a.getMonth() + 1) + "-" + a.getDate() + " " + a.getHours() + ":" + m + ":" + s;
         document.getElementById("sdata").innerHTML = a;
     }
 
