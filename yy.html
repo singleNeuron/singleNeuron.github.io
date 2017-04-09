@@ -15,7 +15,10 @@ var videoscourse = 0;
 		}
 		function openwdy() {
 			if (videoscourse == 0) window.open ("https://www.bilibili.com/video/av3344094/", "微电影", "channelmode=yes, location=no, menubar=no, resizable=yes, scrollbars=yes, titlebar=no, toolbar=no");
-			else window.open ("https://www.youtube.com/embed/LAEWEUorPcM?rel=0", "诗歌朗诵", "channelmode=yes, location=no, menubar=no, resizable=yes, scrollbars=no, titlebar=no, toolbar=no");
+			else window.open ("https://www.youtube.com/embed/LAEWEUorPcM?rel=0", "微电影", "channelmode=yes, location=no, menubar=no, resizable=yes, scrollbars=no, titlebar=no, toolbar=no");
+		}
+		function openjysp() {
+			window.open ("https://www.bilibili.com/video/av9724451/", "加油视频", "channelmode=yes, location=no, menubar=no, resizable=yes, scrollbars=no, titlebar=no, toolbar=no");
 		}
 		function changevideo() {
 			if (videoscourse == 0) {
@@ -40,7 +43,6 @@ var videoscourse = 0;
 			document.getElementById("wdy1").style.display = "none";
 		}
 //-->
-
 	</script>
 
 	<meta http-equiv="Content-Language" content="zh-cn" />
@@ -164,64 +166,87 @@ var videoscourse = 0;
 	<p>&nbsp;</p>
 	<table style="width: 100%">
 		<tr>
-			<td class="style11" style="width: 92px; height: 45px;">&nbsp;</td>
-			<td class="style11" style="width: 581px; height: 45px;">
-				<a href="javascript:void(0);" onclick="opensgls()">诗歌朗诵</a></td>
-			<td style="height: 45px; width: 205px">
+			<td class="style10" style="width: 581px">&nbsp;</td>
+			<td class="style11">
+				<a href="javascript:void(0);" onclick="openjysp()">加油视频</a></td>
+			
+			<td style="width: 205px">
+				&nbsp;</td>
+			<td class="style10" style="width: 92px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="style10" style="width: 92px">&nbsp;</td>
+			<td>
+				<embed height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=9724451&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></embed>
 			</td>
+			<td class="style10" style="width: 581px">&nbsp;</td>
+			<td style="width: 205px">
+				&nbsp;</td>
+			<td class="style10" style="width: 581px">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="style11" style="width: 92px; height: 45px;">&nbsp;</td>
 			<td style="height: 45px">
 
 			</td>
+			<td style="height: 45px; width: 205px">
+			</td>
+
+			<td class="style11" style="width: 581px; height: 45px;">
+				<a href="javascript:void(0);" onclick="opensgls()">诗歌朗诵</a></td>
 		</tr>
 		<tr>
 			<td class="style10" style="width: 92px; height: 501px;">&nbsp;</td>
-			<td class="style10" style="width: 581px; height: 501px;">&nbsp;
-				<iframe id="sgls" height=498 width=510 src='https://player.youku.com/embed/XODgyMzA1NzAw' frameborder=0 'allowfullscreen'></iframe>
-				<iframe id="sgls1" width="560" height="315" src="https://www.youtube.com/embed/zr7ZlOB4_6I?rel=0" frameborder="0" allowfullscreen></iframe>
-			</td>
-			<td style="height: 501px; width: 205px">
-
 			</td>
 			<td style="height: 501px">
 
 			</td>
+			<td style="height: 501px; width: 205px">
+				<td class="style10" style="width: 581px; height: 501px;">&nbsp;
+					<iframe id="sgls" height=498 width=510 src='https://player.youku.com/embed/XODgyMzA1NzAw' frameborder=0 'allowfullscreen'></iframe>
+					<iframe id="sgls1" width="560" height="315" src="https://www.youtube.com/embed/zr7ZlOB4_6I?rel=0" frameborder="0" allowfullscreen></iframe>
+				</td>
 		</tr>
 		<tr>
-			<td class="style10" style="width: 92px">&nbsp;</td>
 			<td class="style10" style="width: 581px">&nbsp;</td>
-			<td style="width: 205px">
-				&nbsp;</td>
 			<td class="style11">
 				<a href="javascript:void(0);" onclick="opencygs()">成语故事</a></td>
+			
+			<td style="width: 205px">
+				&nbsp;</td>
+			<td class="style10" style="width: 92px">&nbsp;</td>
 		</tr>
 		<tr>
 			<td class="style10" style="width: 92px">&nbsp;</td>
-			<td class="style10" style="width: 581px">&nbsp;</td>
-			<td style="width: 205px">
-				&nbsp;</td>
 			<td>
 				<iframe height=498 width=510 src='https://player.youku.com/embed/XMTYzMzc5ODI0NA==' frameborder=0 'allowfullscreen'></iframe>
 			</td>
+			<td class="style10" style="width: 581px">&nbsp;</td>
+			<td style="width: 205px">
+				&nbsp;</td>
+			<td class="style10" style="width: 581px">&nbsp;</td>
 		</tr>
 		<tr>
 			<td class="style11" style="width: 92px">&nbsp;</td>
-			<td class="style11" style="width: 581px">
-				<a href="javascript:void(0);" onclick="openwdy()">微电影</a></td>
-			<td class="style11" style="width: 205px">
-				&nbsp;</td>
 			<td>
 				&nbsp;</td>
+			<td class="style11" style="width: 205px">
+				&nbsp;</td>
+				<td class="style11" style="width: 581px">
+				<a href="javascript:void(0);" onclick="openwdy()">微电影</a></td>
+			
 		</tr>
 		<tr>
 			<td class="style10" style="width: 92px">&nbsp;</td>
+			<td>
+			</td>
+			<td style="width: 205px">
+				&nbsp;</td>
+			
 			<td class="style10" style="width: 581px">&nbsp;
 				<embed id="wdy" height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf"
 				 flashvars="aid=3344094&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></embed>
 				<iframe id="wdy1" width="560" height="315" src="https://www.youtube.com/embed/LAEWEUorPcM?rel=0" frameborder="0" allowfullscreen></iframe>
-			</td>
-			<td style="width: 205px">
-				&nbsp;</td>
-			<td>
 			</td>
 		</tr>
 	</table>
