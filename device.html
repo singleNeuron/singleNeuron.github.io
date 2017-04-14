@@ -73,21 +73,6 @@
             },false);
         }
 
-        var video = document.getElementById("video");
-        var canvas = document.getElementById("canvas");
-        var context = canvas.getContext("2d");
-        if (navigator.getUserMedia) { // 标准的API
-                navigator.getUserMedia({ "video": true }, function (stream) {
-                    video.src = stream;
-                    video.play();
-                }, false);
-        } else if (navigator.webkitGetUserMedia) { // WebKit 核心的API
-                navigator.webkitGetUserMedia({ "video": true }, function (stream) {
-                    video.src = window.webkitURL.createObjectURL(stream);
-                    video.play();
-                }, false);
-        }
-
     //-->
     </script>
 </head>
@@ -118,9 +103,6 @@
     <p>Beta: <span id="beta"></span></p>
     <p>Gamma: <span id="gamma"></span></p>
 
-    <h2>Camera</h2>
-    <video id="video" autoplay=""style='width:640px;height:480px'></video>
-    <canvas id="canvas" width="640" height="480"></canvas>
 </body>
 
 </html>
