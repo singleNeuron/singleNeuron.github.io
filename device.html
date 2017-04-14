@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>singleNeuron-device</title>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+        <!--
+            function vibrate() {
+                if (navigator.vibrate) {
+                    navigator.vibrate(1000);
+                } else if (navigator.webkitVibrate) {
+                    navigator.webkitVibrate(1000);
+                }
+            }
+
+        var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery || navigator.msBattery;
+        if (battery) {
+            document.getElementById("charging").innerHTML = battery.charging;
+            document.getElementById("chargingtime").innerHTML = battery.chargingtime;
+            document.getElementById("level").innerHTML = battery.level;
+            document.getElementById("dischargingtime").innerHTML = battery.dischargingtime;
+            battery.addEventListener("chargingchange", function (e) {
+                document.getElementById("charging").innerHTML = battery.charging;
+            }, false);
+            battery.addEventListener("chargingtimechange", function (e) {
+                document.getElementById("chargingtime").innerHTML = battery.chargingtime;
+            }, false);
+            battery.addEventListener("levelchange", function (e) {
+                document.getElementById("level").innerHTML = battery.level;
+            }, false);
+            battery.addEventListener("dischargingtimechange", function (e) {
+                document.getElementById("dischargingtime").innerHTML = battery.dischargingtime;
+            }, false);
+        }
+
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(showPosition);
+        }
+        function showPosition(position) {
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            latlon = new google.maps.LatLng(lat, lon)
+            mapholder = document.getElementById('mapholder')
+            mapholder.style.height = '250px';
+            mapholder.style.width = '500px';
+
+            var myOptions = {
+                center: latlon, zoom: 14,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeControl: false,
+                navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
+            };
+            var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
+            var marker = new google.maps.Marker({ position: latlon, map: map, title: "You are here!" });
+
+            document.getElementById("latitude").innerHTML = position.coords.latitude;
+            document.getElementById("longitude").innerHTML = position.coords.longitude;
+            document.getElementById("accuracy").innerHTML = position.coords.accuracy;
+            document.getElementById("altitude").innerHTML = position.coords.altitude;
+            document.getElementById("altitudeAccuracy").innerHTML = position.coords.altitudeAccuracy;
+            document.getElementById("heading").innerHTML = position.coords.heading;
+            document.getElementById("speed").innerHTML = position.coords.speed;
+            document.getElementById("timestamp").innerHTML = position.coords.timestamp;
+        }
+
+        if (window.DeviceOrientationEvent) {
+            window.addEventListener('deviceorientation',function(event) {
+                document.getElementById("alpha").innerHTML = event.alpha;
+                document.getElementById("beta").innerHTML = event.beta;
+                document.getElementById("gamma").innerHTML = event.gamma;
+            },false);
+        }
+
+        var video = document.getElementById("video");
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        if (navigator.getUserMedia) { // 标准的API
+                navigator.getUserMedia({ "video": true }, function (stream) {
+                    video.src = stream;
+                    video.play();
+                }, false);
+        } else if (navigator.webkitGetUserMedia) { // WebKit 核心的API
+                navigator.webkitGetUserMedia({ "video": true }, function (stream) {
+                    video.src = window.webkitURL.createObjectURL(stream);
+                    video.play();
+                }, false);
+        }
+
+    //-->
+    </script>
+</head>
+
+<body>
+    <h2>Vibrate</h2>
+    <a href="javascript:void(0);" onclick="vibrate()">click</a>
+
+    <h2>Battery</h2>
+    <p>Charging: <span id="charging"></span></p>
+    <p>ChargingTime: <span id="chargingtime"></span></p>
+    <p>Level: <span id="level"></span></p>
+    <p>DischargingTime: <span id="dischargingtime"></span></p>
+
+    <h2>Geolocation</h2>
+    <p>Latitude: <span id="latitude"></span></p>
+    <p>Longitude: <span id="longitude"></span></p>
+    <p>Accuracy: <span id="accuracy"></span></p>
+    <p>Altitude: <span id="altitude"></span></p>
+    <p>AltitudeAccuracy: <span id="altitudeAccuracy"></span></p>
+    <p>Heading: <span id="heading"></span></p>
+    <p>Speed: <span id="speed"></span></p>
+    <p>Timestamp: <span id="timestamp"></span></p>
+    <div id="mapholder"></div>
+
+    <h2>Orientation</h2>
+    <p>Alpha: <span id="alpha"></span></p>
+    <p>Beta: <span id="beta"></span></p>
+    <p>Gamma: <span id="gamma"></span></p>
+
+    <h2>Camera</h2>
+    <video id="video" autoplay=""style='width:640px;height:480px'></video>
+    <canvas id="canvas" width="640" height="480"></canvas>
+</body>
+
+</html>
