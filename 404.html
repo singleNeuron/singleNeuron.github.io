@@ -4,23 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <meta charset="UTF-8">
     <title>singleNeuron-404</title>
+    <script src="runner.js"></script>
+    <script>
+    initRunner('#container');
+    </script>
 </head>
 <body>
     <p>404 ERROR!</p>
-    <p>将在 <span id="mes">5</span> 秒钟后返回到首页...</p>
-    <script>
-    var i = 5;
-    var timer;
-    timer = setInterval("fun()", 1000);
-
-    function fun() {
-        if (i == 0) {
-            window.location.href = "https://singleNeuron.github.io";
-            clearInterval(timer);
-        }
-        document.getElementById("mes").innerHTML = i;
-        i--;
-    }
-    </script>
+    <div id="container"></div>
 </body>
 </html>
