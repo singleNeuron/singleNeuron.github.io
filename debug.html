@@ -162,11 +162,12 @@ var txt = "";
     }
 
     var timer = self.setInterval("data()", 1000);
-    var timer2 = self.setInterval("getsdate()", 1000);
+    //var timer2 = self.setInterval("getsdate()", 1000);
     document.getElementById("ip").innerHTML = returnCitySN["cip"];
     document.getElementById("add").innerHTML = returnCitySN["cname"];
     labelIp('add2');
-
+    
+    getsdate();
     function getsdate() {
         var xmlHttp;
         xmlHttp = null;
@@ -178,7 +179,7 @@ var txt = "";
         }
         if (xmlHttp != null) {
             try {
-                xmlHttp.open("GET", "http://giithub.io", false);
+                xmlHttp.open("GET", "http://www.ntsc.ac.cn/", false);
                 xmlHttp.send(null);
                 var dateStr = xmlHttp.getResponseHeader("Date");
                 document.getElementById("sdata").innerHTML = dateStr;
