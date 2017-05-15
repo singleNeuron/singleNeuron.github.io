@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>singleNeuron-debug</title>
 </head>
+
 <body>
     <p> Local Time: <span id="data"></span></p>
     <p> Server Time: <span id="sdata"></span></p>
     <p> IP: <span id="ip"></span></p>
     <p> Address: <span id="add"></span> / <span id="add2"></span> </p>
     <div id="example"></div>
+    <p> ScrollHeight: <span id="sh"></span></p>
+    <p> ScrollWidth: <span id="sw"></span></p>
+    <p> Mouse X: <span id="x"></span></p>
+    <p> Mouse Y: <span id="y"></span></p>
     <p>API提供： <a href="http://pv.sohu.com/cityjson?ie=utf-8">搜狐</a>
         <a href="http://whois.pconline.com.cn/ip.js">太平洋</a></p>
 </body>
@@ -136,32 +143,70 @@ var txt = "";
     txt += "<p>Platform: " + navigator.platform + "</p>";
     txt += "<p>Language: " + navigator.language + "</p>";
 
+    txt += "<p>Height: " + screen.height + "</p>";
+    txt += "<p>Width: " + screen.width + "</p>";
+    txt += "<p>ColorDepth: " + screen.colorDepth + "</p>";
+    txt += "<p>UpdateInterval: " + screen.updateInterval + "</p>";
+
     document.getElementById("example").innerHTML = txt;
+
+    document.getElementById("sh").innerHTML = document.body.scrollHeight;
+    document.getElementById("sw").innerHTML = document.body.scrollWidth;
+    window.onresize = function () {
+        document.getElementById("sh").innerHTML = document.body.scrollHeight;
+        document.getElementById("sw").innerHTML = document.body.scrollWidth;
+    }
 
     function data() {
         document.getElementById("data").innerHTML = Date();
-        getsdata();
     }
 
     var timer = self.setInterval("data()", 1000);
+    var timer2 = self.setInterval("getsdate()", 1000);
     document.getElementById("ip").innerHTML = returnCitySN["cip"];
     document.getElementById("add").innerHTML = returnCitySN["cname"];
     labelIp('add2');
 
-//-->
-
-</script>
-
-<script runat="server" type="text/javascript">
-    function getsdata() {
-        var a = new Date();
-        var s = a.getSeconds();
-        if (s < 10) s = "0" + s;
-        var m = a.getMinutes()
-        if (m < 10) m = "0" + m;
-        a = a.getFullYear() + "-" + (a.getMonth() + 1) + "-" + a.getDate() + " " + a.getHours() + ":" + m + ":" + s;
-        document.getElementById("sdata").innerHTML = a;
+    function getsdate() {
+        var xmlHttp;
+        xmlHttp = null;
+        if (window.XMLHttpRequest) {
+            xmlHttp = new XMLHttpRequest();
+        }
+        else if (window.ActiveXObject) {
+            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        if (xmlHttp != null) {
+            try {
+                xmlHttp.open("GET", "http://giithub.io", false);
+                xmlHttp.send(null);
+                var dateStr = xmlHttp.getResponseHeader("Date");
+                document.getElementById("sdata").innerHTML = dateStr;
+            }
+            catch (e) {
+                document.getElementById("sdata").innerHTML = "Not Support";
+            }
+        }
     }
+
+    function mousePosition(ev) {
+        if (ev.pageX || ev.pageY) {
+            return { x: ev.pageX, y: ev.pageY };
+        }
+        return {
+            x: ev.clientX + document.body.scrollLeft - document.body.clientLeft,
+            y: ev.clientY + document.body.scrollTop - document.body.clientTop
+        };
+    }
+    function mouseMove(ev) {
+        ev = ev || window.event;
+        var mousePos = mousePosition(ev);
+        document.getElementById('x').innerHTML = mousePos.x;
+        document.getElementById('y').innerHTML = mousePos.y;
+    }
+    document.onmousemove = mouseMove;
+
+//-->
 
 </script>
 
