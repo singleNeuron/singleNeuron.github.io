@@ -179,7 +179,7 @@ var txt = "";
         }
         if (xmlHttp != null) {
             try {
-                xmlHttp.open("GET", "http://www.ntsc.ac.cn/", false);
+                xmlHttp.open("GET", "https://singleneuron.github.io", false);
                 xmlHttp.send(null);
                 var dateStr = xmlHttp.getResponseHeader("Date");
                 document.getElementById("sdata").innerHTML = dateStr;
