@@ -7,24 +7,75 @@
 	<title>singleNeuron</title>
 	<link rel="stylesheet" href="css/mdui.min.css">
 	<script type="text/javascript" src="js/mdui.min.js"></script>
+	<script type="text/javascript">
+		function onload1() {
+			document.getElementById("a").height = document.body.clientWidth*2.1;
+		}
+		function onload2() {
+			if (document.body.clientWidth < 1024){
+				document.getElementById("b").width = document.body.clientWidth*0.9;
+			} else{
+				document.getElementById("b").width = (document.body.clientWidth*0.9-480)*0.9;
+			} 
+			document.getElementById("b").height = document.getElementById("b").width/4*3;
+		}
+	</script>
 </head>
 
-<body style="background-image: url('images/psbIXIBY58B.jpg'); background-attachment: fixed; background-size: cover; color: #FFFFFF;" class="mdui-theme-layout-dark mdui-theme-primary-teal">
-	<div class="mdui-container mdui-typo">
+<body style="background-image: url('images/psbIXIBY58B.jpg'); background-attachment: fixed; background-size: cover; color: #FFFFFF;"
+ class="mdui-theme-layout-dark mdui-theme-primary-teal">
+	<div class="mdui-container">
 		<h1>神经元 的个人主页</h1>
-		<div class="mdui-col-xs-12 mdui-col-md-8"></div>
-		<div class="mdui-col-xs-12 mdui-col-md-4">
-			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="https://music.163.com/outchain/player?type=0&id=595264607&auto=1&height=430" class="mdui-float-right"></iframe>
+		<div class="mdui-divider-light"></div>
+		<div class="mdui-row">
+			<div class="mdui-col-xs-12 mdui-col-md-8">
+				<div class="mdui-tab" mdui-tab>
+					<a href="#example1-tab1" class="mdui-ripple mdui-hoverable">Myself</a>
+					<a href="#example1-tab2" class="mdui-ripple mdui-hoverable">Chemistry</a>
+					<a href="#example1-tab3" class="mdui-ripple mdui-hoverable">First Tech Challenge</a>
+					<a href="#example1-tab4" class="mdui-ripple mdui-hoverable">Our Great Yuying</a>
+				</div>
+				<div id="example1-tab1" class="mdui-p-a-2">
+					<div class="mdui-list">
+  						<span class="mdui-list-item">QQ: 1075262552</span>
+						<a href="mailto:liziyuan@lincaiqi.tech" class="mdui-list-item mdui-ripple">Email: liziyuan@lincaiqi.tech</a>
+					</div>
+				</div>
+				<div id="example1-tab2" class="mdui-p-a-2">
+					<div class="mdui-typo">
+						<p><a class="mdui-text-color-teal-accent" href="https://www.zhihu.com/question/290578374/answer/474489715">集齐元素周期表所有元素，大概需要多少钱？ - 知乎</a></p>
+						<p><a class="mdui-text-color-teal-accent" href="./实验大纲4.4.2-20161217-NIGHTLY.pdf">某zz元的中二时期黑历史：实验大纲4.4.2-20161217-NIGHTLY.pdf</a></p>
+					</div>
+				</div>
+				<div id="example1-tab3" class="mdui-p-a-2">
+					<iframe id="a" scrolling="auto" width="100%" src="http://singleneuron.github.io/FTC-1362/" frameborder="0" seamless onload="javascript:onload1();"></iframe>
+				</div>
+				<div id="example1-tab4" class="mdui-p-a-2">
+					<iframe id="b" src="//player.bilibili.com/player.html?aid=16040184&cid=26168724&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" onload="javascript:onload2();"> </iframe>
+				</div>
+			</div>
+			
+			<div class="mdui-divider-light mdui-hidden-md-up mdui-col-xs-12"></div>
+			<div class="mdui-col-xs-12 mdui-col-md-4">
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="380px" height="520px" src="https://music.163.com/outchain/player?type=0&id=595264607&auto=1&height=430" class="mdui-float-right"></iframe>
+			</div>
 		</div>
 		
+		<div class="mdui-divider-light"></div>
+
 		<div class="mdui-float-right mdui-typo">
 			<a class="mdui-text-color-teal-accent" href="debug.html">debug</a>
 			<a class="mdui-text-color-teal-accent" href="device.html">device</a>
-			<a class="mdui-text-color-teal-accent" href="https://github.com/singleNeuron/singleNeuron.github.io/commits/master">change log</a>
+			<p><a class="mdui-text-color-teal-accent mdui-float-right" href="www.lincaiqi.tech">子衿工作室</a></p>
 		</div>
 	</div>
+	
+	<div class="mdui-bottom-nav mdui-typo">
+  		<p>Copyright© 2016-2018 singleNeuron</p>
+		
+	</div>
 
-	<script type="text/javascript" color="255,248,231" opacity='0.8' count="200" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+	<script type="text/javascript" color="255,248,231" opacity="0.8" count="200" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
 
 </body>
 
