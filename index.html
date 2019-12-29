@@ -2,15 +2,13 @@
 <html>
 
 <head>
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 	<meta http-equiv="Content-Language" content="zh-cn" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>singleNeuron</title>
 	<link rel="stylesheet" href="css/mdui.min.css">
 	<script type="text/javascript" src="js/mdui.min.js"></script>
 	<script type="text/javascript">
-		function onload1() {
-			document.getElementById("a").height = document.body.clientWidth*2.1;
-		}
 		function onload2() {
 			if (document.body.clientWidth < 1024){
 				document.getElementById("b").width = document.body.clientWidth*0.9;
@@ -31,16 +29,18 @@
 			<div class="mdui-col-xs-12 mdui-col-md-8">
 				<div class="mdui-tab" mdui-tab>
 					<a href="#example1-tab1" class="mdui-ripple mdui-hoverable">Myself</a>
+					<a href="#example1-tab5" class="mdui-ripple mdui-hoverable">Android</a>
 					<a href="#example1-tab2" class="mdui-ripple mdui-hoverable">Chemistry</a>
 					<a href="#example1-tab3" class="mdui-ripple mdui-hoverable">First Tech Challenge</a>
 					<a href="#example1-tab4" class="mdui-ripple mdui-hoverable">Our Great Yuying</a>
 				</div>
 				<div id="example1-tab1" class="mdui-p-a-2">
 					<div class="mdui-list">
-  						<span class="mdui-list-item">QQ: 1075262552</span>
+						<span class="mdui-list-item">QQ: 1075262552</span>
+						<a href="https://t.me/singleNeuron" class="mdui-list-item mdui-ripple">Telegram：@singleNeuron</a>
 						<a href="mailto:liziyuan0720@gmail.com" class="mdui-list-item mdui-ripple">Email: liziyuan0720@gmail.com</a>
 						<a href="https://www.zhihu.com/people/37b307dfbbabdde48e272c93353300a7" class="mdui-list-item mdui-ripple">知乎: @神经元</a>
-						<a href="coolmarket://u/603406" class="mdui-list-item mdui-ripple">酷安: @神经元</a>
+						<a href="https://coolapk.com/u/603406" class="mdui-list-item mdui-ripple">酷安: @神经元</a>
 						<a href="https://github.com/singleNeuron" class="mdui-list-item mdui-ripple">GitHub: @singleNeuoron</a>
 					</div>
 				</div>
@@ -51,10 +51,17 @@
 					</div>
 				</div>
 				<div id="example1-tab3" class="mdui-p-a-2">
-					<iframe id="a" scrolling="auto" width="100%" src="https://singleneuron.github.io/FTC-1362/" frameborder="0" seamless onload="javascript:onload1();"></iframe>
+					<iframe id="a" scrolling="auto" width="100%" src="https://singleneuron.me/ftc_app/" frameborder="0" seamless></iframe>
 				</div>
 				<div id="example1-tab4" class="mdui-p-a-2">
 					<iframe id="b" src="//player.bilibili.com/player.html?aid=16040184&cid=26168724&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" onload="javascript:onload2();"> </iframe>
+					<a class="mdui-text-color-teal-accent mdui-list-item mdui-ripple" href="https://zhuanlan.zhihu.com/p/30143139">大育英帝国Minecraft计划 收尾总结</a>
+				</div>
+				<div id="example1-tab5" class="mdui-p-a-2">
+					<div class="mdui-list">
+						<p><a href="https://xposedmusicnotify.singleneuron.me/" class="mdui-text-color-teal-accent">原生音乐通知</a></p>
+						<p><a href="https://singleneuron.me/PhotoTimeFixforAndroid/" class="mdui-text-color-teal-accent">照片时间修复</a></p>
+					</div>
 				</div>
 			</div>
 			
@@ -69,7 +76,7 @@
 		<div class="mdui-float-right mdui-typo">
 			<a class="mdui-text-color-teal-accent" href="debug.html">debug</a>
 			<a class="mdui-text-color-teal-accent" href="device.html">device</a>
-			<p><a class="mdui-text-color-teal-accent mdui-float-right" href="nexus6p.cn">Nexus6p吧</a></p>
+			<p><a class="mdui-text-color-teal-accent mdui-float-right" href="https://nexus6pbar.github.io">Nexus6p吧</a></p>
 		</div>
 	</div>
 	
